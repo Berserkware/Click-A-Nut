@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
+    
     public float NutsPerSec = 0f;
     public float Nuts = 0.0f;
     public float NutsPerClick = 1f;
