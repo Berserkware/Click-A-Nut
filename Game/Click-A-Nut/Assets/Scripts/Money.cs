@@ -16,42 +16,62 @@ public class Money : MonoBehaviour
     public Text SquirrelText;
     public float SquirrelCost = 10;
     public float SquirrelCostAfter = 2;
+    public int SquirrelCount;
+    public float PerSquirrel = 0.1f;
 
     public Text TreeText;
     public float TreeCost = 100;
     public float TreeCostAfter = 40;
+    public int TreeCount;
+    public float PerTree = 1;
 
     public Text FarmText;
     public float FarmCost = 1000;
     public float FarmCostAfter = 400;
+    public int FarmCount;
+    public float PerFarm = 5;
 
     public Text LabText;
     public float LabCost = 10000;
     public float LabCostAfter = 4000;
+    public int LabCount;
+    public float PerLab = 10;
 
     public Text FactoryText;
     public float FactoryCost = 1000000;
     public float FactoryCostAfter = 20000;
+    public int FactoryCount;
+    public float PerFactory = 50;
 
     public Text NutBankText;
     public float NutBankCost = 10000000;
     public float NutBankCostAfter = 400000;
+    public int NutBankCount;
+    public float PerNutBank = 100;
 
     public Text NutCorpText;
     public float NutCorpCost = 1000000000;
     public float NutCorpCostAfter = 2000000;
+    public int NutCorpCount;
+    public float PerNutCorp = 5000;
 
     public Text NutIslandText;
     public float NutIslandCost = 5000000000;
     public float NutIslandCostAfter = 4000000;
+    public int NutIslandCount;
+    public float PerNutIsland = 10000;
 
     public Text SpaceshipText;
     public float SpaceshipCost = 1000000000000;
     public float SpaceshipCostAfter = 20000000;
+    public int SpaceshipCount;
+    public float PerSpaceship = 50000;
 
     public Text PlanetNutText;
     public float PlanetNutCost = 5000000000000;
     public float PlanetNutCostAfter = 40000000;
+    public int PlanetNutCount;
+    public float PerPlanetNut = 100000;
     public void OnClick()
     {
         Nuts += NutsPerClick;
@@ -61,10 +81,12 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= SquirrelCost)
         {
-            NutsPerSec += 0.1f;
+            NutsPerSec += PerSquirrel;
             Nuts -= 10;
             SquirrelCost += SquirrelCostAfter;
             SquirrelCostAfter *= 2;
+            SquirrelCount += 1;
+            
         }
     
     }
@@ -72,10 +94,11 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= TreeCost)
         {
-            NutsPerSec += 1;
+            NutsPerSec += PerTree;
             Nuts -= 100;
             TreeCost += TreeCostAfter;
             TreeCostAfter *= 2;
+            TreeCount += 1;
         }
 
     }
@@ -83,10 +106,11 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= FarmCost)
         {
-            NutsPerSec += 5;
+            NutsPerSec += PerFarm;
             Nuts -= 1000;
             FarmCost += FarmCostAfter;
             FarmCostAfter *= 2;
+            FarmCount += 1;
         }
 
     }
@@ -94,10 +118,11 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= LabCost)
         {
-            NutsPerSec += 10;
+            NutsPerSec += PerLab;
             Nuts -= 10000;
             LabCost += LabCostAfter;
             LabCostAfter *= 2;
+            LabCount += 1;
         }
 
     }
@@ -105,10 +130,11 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= FactoryCost)
         {
-            NutsPerSec += 50;
+            NutsPerSec += PerFactory;
             Nuts -= 1000000;
             FactoryCost += FactoryCostAfter;
             FactoryCostAfter *= 2;
+            FactoryCount += 1;
         }
 
     }
@@ -116,9 +142,10 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= NutBankCost)
         {
-            NutsPerSec += 100;
+            NutsPerSec += PerNutBank;
             Nuts -= 10000000;
             NutBankCost += NutBankCostAfter;
+            NutBankCount += 1;
         }
 
     }
@@ -126,9 +153,10 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= NutCorpCost)
         {
-            NutsPerSec += 5000;
+            NutsPerSec += PerNutCorp;
             Nuts -= 1000000000;
             NutCorpCost += NutCorpCostAfter;
+            NutCorpCount += 1;
         }
 
     }
@@ -136,9 +164,10 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= NutIslandCost)
         {
-            NutsPerSec += 10000;
+            NutsPerSec += PerNutIsland;
             Nuts -= 5000000000;
             NutIslandCost += NutIslandCostAfter;
+            NutIslandCount += 1;
         }
 
     }
@@ -146,9 +175,10 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= SpaceshipCost)
         {
-            NutsPerSec += 50000;
+            NutsPerSec += PerSpaceship;
             Nuts -= 1000000000000;
             SpaceshipCost += SpaceshipCostAfter;
+            SpaceshipCount += 1;
         }
 
     }
@@ -156,9 +186,10 @@ public class Money : MonoBehaviour
     {
         if (Nuts >= PlanetNutCost)
         {
-            NutsPerSec += 100000;
+            NutsPerSec += PerPlanetNut;
             Nuts -= 5000000000000;
             PlanetNutCost += PlanetNutCostAfter;
+            PlanetNutCount += 1;
         }
 
     }
