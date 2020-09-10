@@ -8,11 +8,12 @@ public class SquirrelFood : MonoBehaviour, IPointerClickHandler
     public GameObject PopUp;
     public void Buy()
     {
-        if(GetComponent<Money>().Nuts >= 100 && GetComponent<Money>().SquirrelCount >= 1)
+        if(GameObject.Find("ButtonManager").GetComponent<Money>().Nuts >= 100 && GameObject.Find("ButtonManager").GetComponent<Money>().SquirrelCount >= 1)
         {
-            GetComponent<Money>().Nuts -= 100;
-            GetComponent<Money>().PerSquirrel += 0.1f;
+            GameObject.Find("ButtonManager").GetComponent<Money>().Nuts -= 100;
+            GameObject.Find("ButtonManager").GetComponent<Money>().PerSquirrel += 0.1f;
             Destroy(this.gameObject);
+            GameObject.Find("ButtonManager").GetComponent<Money>().NutsPerSec += 0.1f * GameObject.Find("ButtonManager").GetComponent<Money>().SquirrelCount;
         }
     }
     public void OnPointerClick (PointerEventData eventData)
@@ -33,5 +34,6 @@ public class SquirrelFood : MonoBehaviour, IPointerClickHandler
     private void Start()
     {
         PopUp.SetActive(false);
+        
     }
 }
